@@ -5,8 +5,6 @@ import time
 import cv2
 import pandas as pd
 
-
-#-------------------------
 def recognize_attendence():
     recognizer = cv2.face.LBPHFaceRecognizer_create()  # cv2.createLBPHFaceRecognizer()
     recognizer.read("TrainingImageLabel"+os.sep+"Trainner.yml")
@@ -17,10 +15,10 @@ def recognize_attendence():
     col_names = ['Id', 'Name', 'Date', 'Time']
     attendance = pd.DataFrame(columns=col_names)
 
-    # Initialize and start realtime video capture
     cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     cam.set(3, 640)  # set video width
     cam.set(4, 480)  # set video height
+    
     # Define min window size to be recognized as a face
     minW = 0.1 * cam.get(3)
     minH = 0.1 * cam.get(4)
