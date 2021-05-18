@@ -4,9 +4,6 @@ import cv2
 import os
 
 
-# counting the numbers
-
-
 def is_number(s):
     try:
         float(s)
@@ -23,9 +20,6 @@ def is_number(s):
 
     return False
 
-
-
-# Take image function
 
 def takeImages():
 
@@ -50,12 +44,12 @@ def takeImages():
                 #saving the captured face in the dataset folder TrainingImage
                 cv2.imwrite("TrainingImage" + os.sep +name + "."+Id + '.' +
                             str(sampleNum) + ".jpg", gray[y:y+h, x:x+w])
-                #display the frame
+
                 cv2.imshow('frame', img)
-            #wait for 100 miliseconds
+
             if cv2.waitKey(100) & 0xFF == ord('q'):
                 break
-            # break if the sample number is more than 100
+
             elif sampleNum > 100:
                 break
         cam.release()
