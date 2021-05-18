@@ -7,16 +7,11 @@ from threading import Thread
 
 
 
-# -------------- image labesl ------------------------
+# image label 
 
 def getImagesAndLabels(path):
-    # get the path of all the files in the folder
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
-    # print(imagePaths)
-
-    # create empth face list
     faces = []
-    # create empty ID list
     Ids = []
     # now looping through all the image paths and loading the Ids and the images
     for imagePath in imagePaths:
@@ -32,7 +27,7 @@ def getImagesAndLabels(path):
     return faces, Ids
 
 
-# ----------- train images function ---------------
+#train images function
 def TrainImages():
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     harcascadePath = "haarcascade_frontalface_default.xml"
@@ -44,7 +39,7 @@ def TrainImages():
     recognizer.save("TrainingImageLabel"+os.sep+"Trainner.yml")
     print("All Images")
 
-# Optional, adds a counter for images trained (You can remove it)
+# Optional, adds a counter for images trained
 def counter_img(path):
     imgcounter = 1
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
