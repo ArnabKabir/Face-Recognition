@@ -1,23 +1,19 @@
-import os  # accessing the os functions
+import os 
 import check_camera
 import Capture_Image
 import Train_Image
 import Recognize
 
 
-# creating the title bar function
 
 def title_bar():
-    os.system('cls')  # for windows
-
-    # title of the program
+    os.system('cls') 
 
     print("\t**********************************************")
     print("\t***** Face Recognition Attendance System *****")
     print("\t**********************************************")
 
 
-# creating the user main menu function
 
 def mainMenu():
     title_bar()
@@ -61,7 +57,6 @@ def mainMenu():
     exit
 
 
-# ---------------------------------------------------------
 # calling the camera test function from check camera.py file
 
 def checkCamera():
@@ -69,8 +64,6 @@ def checkCamera():
     key = input("Enter any key to return main menu")
     mainMenu()
 
-
-# --------------------------------------------------------------
 # calling the take image function form capture image.py file
 
 def CaptureFaces():
@@ -78,8 +71,6 @@ def CaptureFaces():
     key = input("Enter any key to return main menu")
     mainMenu()
 
-
-# -----------------------------------------------------------------
 # calling the train images from train_images.py file
 
 def Trainimages():
@@ -87,8 +78,6 @@ def Trainimages():
     key = input("Enter any key to return main menu")
     mainMenu()
 
-
-# --------------------------------------------------------------------
 # calling the recognize_attendance from recognize.py file
 
 def RecognizeFaces():
