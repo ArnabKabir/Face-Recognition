@@ -86,5 +86,5 @@ def RecognizeFaces():
     mainMenu()
 
 
-# ---------------main driver ------------------
+# main driver
 mainMenu()
